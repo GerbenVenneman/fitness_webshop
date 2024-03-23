@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* header */
+.dropdown{
+    padding-left: 4px;
+    padding-right: 4px;
+    color: white; /* Tekstkleur wit */
+    background-color: black; /* Achtergrondkleur zwart */
+    border: none;
+    margin-right: 20px;
+}
+.dropdown::-ms-expand {
+    color: white; /* Kleur van het pijltje wit */
+  }
+.dropdown option{
+    color: black; /* Tekstkleur van opties zwart */
+    background-color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+#producten option:first-child {
+    display: none;
+  }
+
+.search-inside{
+    padding: 6px;
+    border-radius: 18px;
+    background-image: url('/img/Search.png');
+    background-repeat: no-repeat;
+    background-size: 25px;
+    background-position: left 10px center;
+    padding-left: 50px;
+    
+}
+.search{
+    width: 100%;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.nav-container{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 80px;
+}
+.nav-sub-container{
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    
+}
+.links{
+    display: flex;
+    color: white;
+}
