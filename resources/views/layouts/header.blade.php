@@ -9,7 +9,7 @@
 <header>
   <div class="nav-container">
     <div class="nav-sub-container">
-      <a style="color: white;" class="btn btn-ghost text-xl">GV Nutrition</a>
+      <a style="color: red; font-weight: bold;" class="btn btn-ghost text-xl">GV Nutrition</a>
       <div class="search">
         <div class="form-control">
           <input class="search-inside" type="text" placeholder="Zoek naar een product" class="input input-bordered w-24 md:w-auto" />
@@ -34,7 +34,12 @@
           <img style="width: 25px" src="{{ asset('img/User.png')}}" alt="">
         </a>
       </button>
-      
+      @if(Auth::check())
+        <form action="{{ route('logout') }}" method="POST">
+          @csrf
+          <button type="submit">Uitloggen</button>
+      </form>
+      @endif
       <button class="btn btn-ghost">
         <a href="#">
           <div style="display: flex; align-items: center;">
