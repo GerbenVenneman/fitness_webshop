@@ -323,3 +323,10 @@
     padding: 20px;
     border: 1px solid #a4a7b1;
 }
+.shopping-cart-customer img{
+    border: 1px solid red;
+    background-color: red;
+    padding: 7px;
+    width: 45px;
+    
+}

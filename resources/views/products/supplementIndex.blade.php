@@ -33,7 +33,10 @@
                                         <p style="font-size: 16px;">€{{ $product->price}}</p>
                                     </div>
                                     <div class="shopping-cart-customer">
-                                        <img style="width: 50px; margin-right: 10px;" src="{{ asset('img/shopping_cart.png.png')}}" alt="">
+                                        <a href="">
+                                            <img class="shopping-cart-customer-inside" style=" margin-right: 10px;" src="{{ asset('img/shopping_cart.png')}}" alt="">
+                                        </a>
+                                        
                                     </div>
                                 </div>
                             </div>
