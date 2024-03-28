@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->string('image');
             $table->enum('category', ['Supplementen', 'Kleding', 'Accessoires']);
+            $table->enum('brand', ['Xxl Nutrition', 'Kosso Nutrition', 'Gymshark', 'Underarmour', 'Clean Nutrition']);
             $table->timestamps();
         });
     }
