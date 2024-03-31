@@ -61,7 +61,6 @@ class ProductController extends Controller
             'brand' => $request->brand,
             'image' => $fileName, // Sla de originele bestandsnaam op in de database
         ]);
-
         return Redirect::route('products.index');
 
     }

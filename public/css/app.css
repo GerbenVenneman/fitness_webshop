@@ -309,9 +309,11 @@
 .product-grid-customer{
     display: grid;
     grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 .head-section{
-    margin-top: 50px;
     padding: 20px; 
     border: 1px solid #a4a7b1;
     display: flex;
@@ -319,9 +321,9 @@
     align-items: center;
 }
 .filter{
-    margin-top: 50px;
     padding: 20px;
     border: 1px solid #a4a7b1;
+    align-self: start;
 }
 .shopping-cart-customer img{
     border: 1px solid red;
@@ -329,4 +331,28 @@
     padding: 7px;
     width: 45px;
     
+}
+#apply-filter-btn{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+}
+#reset-filter-btn{
+    border: 1px solid red;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 4px;
+}
+.price-filter-flex{
+    display: flex;
+    align-items: center;
+}
+.apply-reset{
+    margin-top: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
 }
