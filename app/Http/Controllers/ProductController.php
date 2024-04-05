@@ -37,7 +37,8 @@ class ProductController extends Controller
             'price' => ['required', 'regex:/^\d+(\.\d{1,2})?$/', 'numeric'],
             'category' => 'required',
             'brand' => 'required',
-            'image' => 'required'
+            'image' => 'required',
+            'bulletpoints.*' => 'required|string',
         ]);
         
         $fileName = null;
@@ -51,7 +52,6 @@ class ProductController extends Controller
     
             // Voer hier de rest van je logica uit om het model op te slaan met de bestandsnaam
         }
-
         // Afbeelding in de database opslaan
         Product::create([
             'name' => $request->name,
@@ -60,6 +60,7 @@ class ProductController extends Controller
             'category' => $request->category,
             'brand' => $request->brand,
             'image' => $fileName, // Sla de originele bestandsnaam op in de database
+            'bulletpoints' => json_encode($request->bulletpoints),
         ]);
         return Redirect::route('products.index');
 
@@ -68,9 +69,10 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function showSupplement(string $id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('products.showSupplement', compact('product'));
     }
 
     /**
@@ -93,7 +95,8 @@ class ProductController extends Controller
             'price' => 'sometimes|required',
             'category' => 'sometimes|required',
             'brand' => 'sometimes|required',
-            'image' => 'sometimes|required'
+            'image' => 'sometimes|required',
+            'bulletpoints.*' => 'sometimes|required|string',
         ]);
         
         // Update de afbeelding alleen als er een nieuwe afbeelding is geüpload
@@ -112,8 +115,8 @@ class ProductController extends Controller
             'category' => $request->category,
             'brand' => $request->brand,
             'image' => $fileName,
+            'bulletpoints' => json_encode($request->bulletpoints),
         ]);
-        
         return redirect()->route('products.index');
     }
 
@@ -133,5 +136,11 @@ class ProductController extends Controller
     public function supplementIndex(){
         $products = Product::where('category', 'Supplementen')->get();
         return view('products.supplementIndex', compact('products'));
+    }
+
+    // Accessoires
+    public function accessoiresIndex(){
+        $products = Product::where('category', 'Accessoires')->get();
+        return view('products.accessoiresIndex', compact('products'));
     }
 }

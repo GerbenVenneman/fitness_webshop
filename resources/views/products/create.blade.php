@@ -6,14 +6,14 @@
                 <div class="form-container">
                     <div class="form-data">
                         <div class="form-section-1">
+                            <div class="form-section">
+                                <input type="text" name="name" placeholder="Naam">
+                            </div>
                             <div class="form-flex">
                                 <div class="form-section">
-                                    <input type="text" name="name" placeholder="Naam">
-                                </div>
-                                <div style="width: 120px" class="form-section">
                                     <input type="number" name="price" step="0.01" min="0" placeholder="Prijs">
                                 </div>
-                                <div style="width: 200px" class="form-section">
+                                <div class="form-section">
                                     <select style="height: 100%; padding-left: 10px; padding-right: 40px;" name="category" id="" class="custom-select">
                                         <option hidden value="" style="color: #999;" selected>Categorie</option>
                                         <option value="Supplementen">Supplementen</option>
@@ -21,7 +21,7 @@
                                         <option value="Accessoires">Accessoires</option>
                                     </select>
                                 </div>
-                                <div style="width: 200px" class="form-section">
+                                <div class="form-section">
                                     <select style="height: 100%; padding-left: 10px; padding-right: 40px;" name="brand" id="" class="custom-select">
                                         <option hidden value="" style="color: #999;" selected>Merk</option>
                                         <option value="Xxl Nutrition">Xxl Nutrition</option>
@@ -36,6 +36,15 @@
                             <div class="form-section">
                                 <textarea style="padding-left: 10px" rows="10" cols="50" name="description" placeholder="Beschrijving"></textarea>
                             </div>
+                            <div class="form-section">
+                                <div class="bulletpoints">
+                                    <input type="text" name="bulletpoints[]" placeholder="Bulletpoint 1">
+                                    <input type="text" name="bulletpoints[]" placeholder="Bulletpoint 2">
+                                    <input type="text" name="bulletpoints[]" placeholder="Bulletpoint 3">
+                                    <input type="text" name="bulletpoints[]" placeholder="Bulletpoint 4">
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="custom-file-upload">
                             <input type="file" id="file-upload" name="image" accept="image/*">

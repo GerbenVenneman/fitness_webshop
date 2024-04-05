@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->decimal('price', 10, 2);
             $table->string('image');
+            $table->json('bulletpoints');
             $table->enum('category', ['Supplementen', 'Kleding', 'Accessoires']);
             $table->enum('brand', ['Xxl Nutrition', 'Kosso Nutrition', 'Gymshark', 'Underarmour', 'Clean Nutrition']);
             $table->timestamps();

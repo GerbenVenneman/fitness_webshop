@@ -37,32 +37,28 @@
                 </div>
                 <div class="products">
                     <div class="head-section">
-                        <h1 style="font-size: 25px; font-weight: bold; ">Supplementen</h1>
+                        <h1 style="font-size: 25px; font-weight: bold; ">Accessoires</h1>
                     </div>
                     
                     <div class="grid-product" id="product-grid">
                         @foreach ($products as $product)
-                        <div class="product"  data-price="{{ $product->price }}" data-brand="{{ $product->brand }}">
-                            <div class="product-items-1">
-                                
-                                <a href="{{ route('products.showSupplement', $product->id)}}">
+                            <div class="product" data-price="{{ $product->price }}" data-brand="{{ $product->brand }}">
+                                <div class="product-items-1">
                                     <img style="max-width: 200px" src="{{ asset('uploads/' . $product->image)}}" alt="">
-                                </a>
-                                
-                            </div>
-                            <div class="flex-name-price">
-                                <div class="name-price-brand">
-                                    <p style="font-weight: bold; font-size: 14px;">{{ $product->name}}</p>
-                                    <p style="font-weight: normal; font-size: 13px;">{{$product->brand}}</p>
-                                    <p style="font-size: 16px;">€{{ $product->price}}</p>
                                 </div>
-                                <div class="shopping-cart-customer">
-                                    <a href="">
-                                        <img class="shopping-cart-customer-inside" style=" margin-right: 10px;" src="{{ asset('img/shopping_cart.png')}}" alt="">
-                                    </a>
+                                <div class="flex-name-price">
+                                    <div class="name-price-brand">
+                                        <p style="font-weight: bold; font-size: 14px;">{{ $product->name}}</p>
+                                        <p style="font-weight: normal; font-size: 13px;">{{$product->brand}}</p>
+                                        <p style="font-size: 16px;">€{{ $product->price}}</p>
+                                    </div>
+                                    <div class="shopping-cart-customer">
+                                        <a href="">
+                                            <img class="shopping-cart-customer-inside" style=" margin-right: 10px;" src="{{ asset('img/shopping_cart.png')}}" alt="">
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>

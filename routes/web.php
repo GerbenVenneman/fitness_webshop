@@ -19,8 +19,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 Route::get('/supplements', [ProductController::class, 'supplementIndex'])->name('products.supplementIndex');
+Route::get('/accessoires', [ProductController::class, 'accessoiresIndex'])->name('products.accessoiresIndex');
 
-
+Route::get('/supplements/{id}', [ProductController::class, 'showSupplement'])->name('products.showSupplement');
+Route::get('/accessoires/{id}', [ProductController::class, 'showAccessory'])->name('products.showAccessory');
 
 Route::middleware('auth')->group(function () {
     Route::resource('products', ProductController::class);
