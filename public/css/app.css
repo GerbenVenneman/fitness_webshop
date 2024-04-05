@@ -344,7 +344,7 @@ header{
     border: 1px solid #a4a7b1;
     align-self: start;
     position: sticky;
-    z-index: 1000;
+    z-index: 0;
     top: 130px;
 }
 .shopping-cart-customer img{
